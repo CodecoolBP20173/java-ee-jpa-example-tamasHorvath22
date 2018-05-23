@@ -25,7 +25,7 @@ public class Student {
     private long age;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "student_id")
+    @JoinColumn(name = "address_id")
     private Address address;
 
     @ElementCollection
