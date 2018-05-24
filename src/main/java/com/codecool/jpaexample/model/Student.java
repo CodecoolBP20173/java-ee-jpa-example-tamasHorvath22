@@ -24,13 +24,16 @@ public class Student {
     @Transient
     private long age;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
     @JoinColumn(name = "address_id")
     private Address address;
 
     @ElementCollection
     @CollectionTable(name="phone")
     private List<String> phoneNumbers;
+
+    @ManyToOne()
+    private Klass klass;
 
     public Student() {
     }
@@ -103,4 +106,7 @@ public class Student {
                 '}';
     }
 
+    public void setKlass(Klass klass) {
+        this.klass = klass;
+    }
 }
